@@ -62,10 +62,13 @@ a1 and a2 are the lengths of the shoulder and elbow links respectively.
         print(
             f"Current: Base = {self.enc_data[0]}, Shoulder = {self.enc_data[1]}, Elbow = {self.enc_data[2]}")
 ```
-![alt](
+
 Here we are calculating the joint angles (q1, q2, q3) needed to reach a specified goal position (x, y, z) in 3D space, using inverse kinematics. It then converts these angles to degrees.
 By checking abs((x**2+y**2+z**2-a1**2-a2**2)/(2*a1*a2)) < 1 we are seeing whether the goal is reachable because cosine lies between [-1,1].
 Then it creates a msg of the type Int32MultiArray() and publishes '/auto_arm_signals' topic.
+
+ ![alt](https://github.com/GeetaPriyanka9/ik_anveshak/blob/main/Screenshot%202024-07-19%20230853.png)
+
  Compares calculated desired angles with the current encoder readings to determine the motor commands using ```self.pwm_limit```.
 
 
