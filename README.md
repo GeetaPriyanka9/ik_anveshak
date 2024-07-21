@@ -17,19 +17,6 @@ Code_documentation:
 # FLOW CHART :
 ![alt](https://github.com/GeetaPriyanka9/ik_anveshak/blob/main/Blank%20diagram%202-1_page-0001.jpg)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Variables Intuition:
 
 1. ```self.enc_data```: It is an array of the current encoder readings of base joint,shoulder and elbow joint.
@@ -42,18 +29,6 @@ Code_documentation:
 8. ```self.pranav_bool_pub```: after the task is completed and the arm returns to zero position it becomes true.
 9. ```listen_to_tanish```: once we have reached the goal then this becomes false and we specify the further actions.
 10. ```self.pwm_limit```: It is an array specifying the maximum frequency of pwm signals for base,shoulder,elbow.
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Methods:
    def angle_value(self):
@@ -87,6 +62,7 @@ a1 and a2 are the lengths of the shoulder and elbow links respectively.
         print(
             f"Current: Base = {self.enc_data[0]}, Shoulder = {self.enc_data[1]}, Elbow = {self.enc_data[2]}")
 ```
+![alt](
 Here we are calculating the joint angles (q1, q2, q3) needed to reach a specified goal position (x, y, z) in 3D space, using inverse kinematics. It then converts these angles to degrees.
 By checking abs((x**2+y**2+z**2-a1**2-a2**2)/(2*a1*a2)) < 1 we are seeing whether the goal is reachable because cosine lies between [-1,1].
 Then it creates a msg of the type Int32MultiArray() and publishes '/auto_arm_signals' topic.
