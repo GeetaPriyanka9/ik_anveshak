@@ -1,27 +1,20 @@
 # ik_anveshak
 Code_documentation:
 
-Topics:
+# TOPICS:
 
-```/auto_arm_signals```:
-This topic publishes the frequency values for PWM to the motor drivers
-
-```/enc_drive```:
-      This is a topic used to get the current base, elbow, shoulder angles via the  ```enc_callback```  function. Based on the current position and the goal position we can move our joints
-
-```/arm_goal```:
-This topic is used for getting the goal position. The ```arm_goal_sub_clbk``` function checks whether received values are valid numerical or not , and assigns it to the ```self.goal```.
-
-```/arm_goal_bool```:
-This topic is used to specify whether we need to specify the goal position manually or not. It sets the  ```self.arm_goal_coming_from_tanish``` attribute to false inside the  ```arm_goal_given_clbk``` function if we need to enter the goal position manually.
-
-```/ik_over_ah```:
-This topic publishes a boolean values based on whether the ik mission is completed or not.
+| **Topic**              | **Function**                                                                                                                                                                 |
+|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `/auto_arm_signals`    | Publishes the frequency values for PWM to the motor drivers.                                                                                                                 |
+| `/enc_drive`           | Retrieves the current base, elbow, and shoulder angles via the `enc_callback` function. Based on the current position and the goal position, joints can be moved accordingly. |
+| `/arm_goal`            | Receives the goal position. The `arm_goal_sub_clbk` function checks if the received values are valid numerical values and assigns them to `self.goal`.                         |
+| `/arm_goal_bool`       | Specifies whether the goal position needs to be entered manually. The `arm_goal_given_clbk` function sets the `self.arm_goal_coming_from_tanish` attribute to false if manual input is required. |
+| `/ik_over_ah`          | Publishes boolean values indicating whether the inverse kinematics mission is completed or not.                                                                              |
 
 
 
 
-FLOW CHART :
+# FLOW CHART :
 
 
 
