@@ -15,6 +15,7 @@ Code_documentation:
 
 
 # FLOW CHART :
+![alt](https://github.com/GeetaPriyanka9/ik_anveshak/blob/main/Blank%20diagram%202-1_page-0001.jpg)
 
 
 
